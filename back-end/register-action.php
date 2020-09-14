@@ -1,17 +1,16 @@
-<?php include "config.php";
-
-if(isset($_POST['tombol_login'])){
-
-  $username = mysqli_real_escape_string($conn, trim($_POST['username']));
-  if ($_POST['password']==$_POST['repeatPassword'] ) {
-  $password = mysqli_real_escape_string($conn, trim($_POST['password']));
-  }else
-  {
-      echo "<script>alert('Password yang Anda Masukan Tidak Sama');</script>";
-  }
-
-  $conn = "INSERT INTO users (id_users, username, password)
-            VALUES (:username,:password)";
+<?php
+$username = $_POST['username'];
+$password = $_POST['password'];
+$repeatPassword = $_POST['c_password'];
+if($password != $repeatPassword)
+{
+  print "<script>alert('Konfirmasi password harus sama dengan password !');
+  javascript:history.go(-1);</script>";
+  exit;
 }
-
-?>
+if((!empty($username)) && (!empty($password)))
+{
+$query = mysql_query("INSERT INTO $table (username,password)
+values ('$username','$password');");
+print "Registrasi success<br>";
+}
