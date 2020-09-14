@@ -1,7 +1,7 @@
 <?php
 $username = $_POST['username'];
 $password = $_POST['password'];
-$repeatPassword = $_POST['c_password'];
+$repeatPassword = $_POST['repeatPassword'];
 if($password != $repeatPassword)
 {
   print "<script>alert('Konfirmasi password harus sama dengan password !');
