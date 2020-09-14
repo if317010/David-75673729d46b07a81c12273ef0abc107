@@ -10,7 +10,7 @@ if($password != $repeatPassword)
 }
 if((!empty($username)) && (!empty($password)))
 {
-$query = mysql_query("INSERT INTO $table (username,password)
+$query = mysqli_query("INSERT INTO $table (username,password)
 values ('$username','$password');");
 print "Registrasi success<br>";
 }
