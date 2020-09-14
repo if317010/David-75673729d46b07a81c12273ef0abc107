@@ -9,6 +9,9 @@ if(isset($_POST['tombol_login'])){
   {
       echo "<script>alert('Password yang Anda Masukan Tidak Sama');</script>";
   }
+
+  $conn = "INSERT INTO users (id_users, username, password)
+            VALUES (:username,:password)";
 }
 
 ?>
